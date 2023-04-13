@@ -1,0 +1,23 @@
+.Card {
+	height: 145px;
+	border-radius: 16px;
+	padding: 16px;
+	/* background: radial-gradient(
+		circle farthest-corner at 100% 0%,
+		#ffc3c3 0%,
+		#ff4848 100%
+	); */
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	margin: 16px;
+	position: relative;
+}
+.Card-title {
+	font-size: 24px;
+	font-weight: 600;
+}
+.Card-text {
+	font-size: 16px;
+	font-weight: 200;
+}
