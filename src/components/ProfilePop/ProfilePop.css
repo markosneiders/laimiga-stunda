@@ -1,0 +1,78 @@
+.ProfilePop {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+.ProfilePop-background {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.ProfilePop-container {
+	background-color: white;
+	border-radius: 16px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 30%;
+	padding: 16px;
+	max-height: 90%;
+}
+h2 {
+	text-align: center;
+	color: #4e4e4e;
+}
+.ProfilePop-close {
+	position: absolute;
+	right: 16px;
+	cursor: pointer;
+}
+.ProfilePop-cards {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-height: 400px;
+	overflow-y: scroll;
+}
+.ProfilePop-cards::-webkit-scrollbar {
+	width: 0.3em;
+}
+
+.ProfilePop-cards::-webkit-scrollbar-track {
+	box-shadow: "inset 0 0 6px #000";
+}
+
+.ProfilePop-cards::-webkit-scrollbar-thumb {
+	background-color: #ccc;
+	border-radius: 20px;
+}
+.ProfilePop-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: calc(50% - 64px);
+	padding: 16px;
+	margin: 16px;
+	background-color: #bfbfbf;
+	border-radius: 16px;
+	color: #4e4e4e;
+	font-size: larger;
+}
+.ProfilePop-card__button {
+	background-color: #595959;
+	color: #fff;
+	padding: 8px;
+	padding-left: 32px;
+	padding-right: 32px;
+	border-radius: 8px;
+	width: min-content;
+	margin-top: 16px;
+	cursor: pointer;
+}

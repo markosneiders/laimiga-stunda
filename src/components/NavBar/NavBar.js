@@ -1,15 +1,16 @@
 import React from "react";
 import "./NavBar.css"; // import your custom CSS file
 import { BsPersonCircle, BsQuestionCircle } from "react-icons/bs"; // import the help icon
+import Button from "../Button/Button";
 
-function NavBar() {
+function NavBar({ helpFunction, profileFunction }) {
 	const isMobile = window.innerWidth <= 768;
 
 	function handleHelp() {
-		console.log("help clicked");
+		helpFunction(true);
 	}
 	function handleProfile() {
-		console.log("profile clicked");
+		profileFunction(true);
 	}
 	return (
 		<nav className="navbar">
@@ -35,16 +36,16 @@ function NavBar() {
 			<div className="navbar-right">
 				{isMobile ? (
 					<BsPersonCircle
-						onClick={handleHelp}
+						onClick={handleProfile}
 						className="nav__login-icon"
 						style={{
 							fontSize: "28px",
 						}}
 					/>
 				) : (
-					<>
-						<button className="navbar-button" onClick={handleHelp}>
-							Pieslēgties
+					<Button
+						text={"Pieslēgties"}
+						content={
 							<BsPersonCircle
 								style={{
 									paddingLeft: "16px",
@@ -52,8 +53,9 @@ function NavBar() {
 								}}
 								className="nav__login-icon"
 							/>
-						</button>
-					</>
+						}
+						clickFunction={handleProfile}
+					/>
 				)}
 			</div>
 		</nav>

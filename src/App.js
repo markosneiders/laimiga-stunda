@@ -1,23 +1,35 @@
+import React, { useState } from "react";
 import "./App.css";
+
+import Background from "./assets/images/Background.jpg";
+import testData from "./testData.json";
+
 import NavBar from "./components/NavBar/NavBar";
 import Card from "./components/Card/Card";
-import Background from "./assets/images/Background.jpg";
-
-import testData from "./testData.json";
+import HelpPop from "./components/HelpPop/HelpPop";
+import ProfilePop from "./components/ProfilePop/ProfilePop";
+//Card data format example
+// const testData = {
+// 	date: "13/04/2023", // Date in dd/mm/yyyy string
+// 	location: "Konferenču zāle", // Location in string
+// 	teacher: "Elīna Ozola", // Teacher in string
+// 	st1: 40, // 1st lesson current applied student count
+// 	st2: 40, // 2nd lesson current applied student count
+// 	st1Max: 40, // 1st lesson max student count
+// 	st2Max: 40, // 2nd lesson max student count
+// };
 
 function App() {
 	const isMobile = window.innerWidth <= 768;
+	const [showHelp, setShowHelp] = useState(false);
+	const [showProfile, setShowProfile] = useState(false);
 
-	//Card data format example
-	// const testData = {
-	// 	date: "13/04/2023", // Date in dd/mm/yyyy string
-	// 	location: "Konferenču zāle", // Location in string
-	// 	teacher: "Elīna Ozola", // Teacher in string
-	// 	st1: 40, // 1st lesson current applied student count
-	// 	st2: 40, // 2nd lesson current applied student count
-	// 	st1Max: 40, // 1st lesson max student count
-	// 	st2Max: 40, // 2nd lesson max student count
-	// };
+	function handleHelp(state) {
+		setShowHelp(state);
+	}
+	function handleProfile(state) {
+		setShowProfile(state);
+	}
 
 	return (
 		<div className="Main">
@@ -33,7 +45,9 @@ function App() {
 					}}
 				></img>
 			) : null}
-			<NavBar />
+			<NavBar helpFunction={handleHelp} profileFunction={handleProfile} />
+			{showHelp && <HelpPop closeFunction={handleHelp} />}
+			{showProfile && <ProfilePop closeFunction={handleProfile} />}
 			<div
 				className="card-view"
 				style={isMobile ? { width: "90%" } : { width: "40%" }}
@@ -42,9 +56,6 @@ function App() {
 				{testData.map((data, index) => (
 					<Card data={data} key={index} />
 				))}
-				{/* {testData.map((data, index) => (
-					<Card data={data} key={index} />
-				))} */}
 				<div style={{ marginTop: "16px" }} />
 			</div>
 		</div>
