@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.css";
+import ApplyPop from "../ApplyPop/ApplyPop";
 function Card({ data }) {
 	//If free spaces are less than warnThreshold, then card becomes orange
 	const warnThreshold = 10;
@@ -7,12 +8,14 @@ function Card({ data }) {
 		const [day, month, year] = dateString.split("/");
 		const date = new Date(year, month - 1, day);
 		const options = { day: "numeric", month: "short" };
-		const formattedDate = date.toLocaleString("en-GB", options);
+		const formattedDate = date.toLocaleString("lv-GB", options);
 		return formattedDate;
 	}
 
+	function handleClick() {}
 	return (
 		<div
+			onClick={handleClick}
 			className="Card"
 			style={{
 				background:

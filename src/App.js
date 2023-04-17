@@ -23,6 +23,7 @@ function App() {
 	const isMobile = window.innerWidth <= 768;
 	const [showHelp, setShowHelp] = useState(false);
 	const [showProfile, setShowProfile] = useState(false);
+	const [showApply, setShowApply] = useState(false);
 
 	function handleHelp(state) {
 		setShowHelp(state);
@@ -30,7 +31,9 @@ function App() {
 	function handleProfile(state) {
 		setShowProfile(state);
 	}
-
+	function handleApply(state) {
+		setShowApply(state[0]);
+	}
 	return (
 		<div className="Main">
 			{!isMobile ? (

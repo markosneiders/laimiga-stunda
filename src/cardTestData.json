@@ -1,0 +1,16 @@
+[
+	{
+		"date": "13/04/2023",
+		"st1Applied": true,
+		"st2Applied": true,
+		"subject": "Matemātika ll",
+		"test": "Integrēšana"
+	},
+	{
+		"date": "28/04/2023",
+		"st1Applied": true,
+		"st2Applied": false,
+		"subject": "Fizika ll",
+		"test": "Optika"
+	}
+]
