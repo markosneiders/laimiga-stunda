@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 import ApplyPop from "../ApplyPop/ApplyPop";
-function Card({ data }) {
+function Card({ data, clickFunction, key }) {
 	//If free spaces are less than warnThreshold, then card becomes orange
 	const warnThreshold = 10;
 	function formatDate(dateString) {
@@ -12,7 +12,9 @@ function Card({ data }) {
 		return formattedDate;
 	}
 
-	function handleClick() {}
+	function handleClick() {
+		clickFunction([true, data.date]);
+	}
 	return (
 		<div
 			onClick={handleClick}

@@ -58,7 +58,6 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: calc(50% - 64px);
 	padding: 16px;
 	margin: 16px;
 	background-color: #bfbfbf;

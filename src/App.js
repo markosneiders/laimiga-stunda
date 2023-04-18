@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Card from "./components/Card/Card";
 import HelpPop from "./components/HelpPop/HelpPop";
 import ProfilePop from "./components/ProfilePop/ProfilePop";
+import ApplyPop from "./components/ApplyPop/ApplyPop";
 //Card data format example
 // const testData = {
 // 	date: "13/04/2023", // Date in dd/mm/yyyy string
@@ -23,7 +24,7 @@ function App() {
 	const isMobile = window.innerWidth <= 768;
 	const [showHelp, setShowHelp] = useState(false);
 	const [showProfile, setShowProfile] = useState(false);
-	const [showApply, setShowApply] = useState(false);
+	const [showApply, setShowApply] = useState([false, ""]);
 
 	function handleHelp(state) {
 		setShowHelp(state);
@@ -32,7 +33,8 @@ function App() {
 		setShowProfile(state);
 	}
 	function handleApply(state) {
-		setShowApply(state[0]);
+		setShowApply(state);
+		console.log(state);
 	}
 	return (
 		<div className="Main">
@@ -51,15 +53,18 @@ function App() {
 			<NavBar helpFunction={handleHelp} profileFunction={handleProfile} />
 			{showHelp && <HelpPop closeFunction={handleHelp} />}
 			{showProfile && <ProfilePop closeFunction={handleProfile} />}
+			{showApply[0] && (
+				<ApplyPop date={showApply[1]} closeFunction={handleApply} />
+			)}
 			<div
 				className="card-view"
 				style={isMobile ? { width: "90%" } : { width: "40%" }}
 			>
 				<div style={{ marginBottom: "76px" }} />
 				{testData.map((data, index) => (
-					<Card data={data} key={index} />
+					<Card data={data} key={index} clickFunction={handleApply} />
 				))}
-				<div style={{ marginTop: "16px" }} />
+				<div style={{ marginTop: "80px" }} />
 			</div>
 		</div>
 	);

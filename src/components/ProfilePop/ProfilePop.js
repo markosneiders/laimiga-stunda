@@ -3,6 +3,8 @@ import cardTestData from "../../cardTestData.json";
 
 import { GrClose } from "react-icons/gr";
 function ProfilePop({ closeFunction }) {
+	const isMobile = window.innerWidth <= 768;
+
 	function handleClose() {
 		closeFunction(false);
 	}
@@ -25,7 +27,14 @@ function ProfilePop({ closeFunction }) {
 				<h3>Pieteiktās laimīgās stundas: {cardTestData.length}</h3>
 				<div className="ProfilePop-cards">
 					{cardTestData.map((data, index) => (
-						<div className="ProfilePop-card">
+						<div
+							className="ProfilePop-card"
+							style={
+								isMobile
+									? { width: "100%" }
+									: { width: "calc(50%-32px)" }
+							}
+						>
 							{formatDate(data.date)}
 							<br />
 							{data.st1Applied ? "15:30" : "16:15"}
