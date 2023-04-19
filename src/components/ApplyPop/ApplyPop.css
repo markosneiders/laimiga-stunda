@@ -39,11 +39,14 @@
 .ApplyPop--titles_main {
 	font-weight: bold;
 	text-align: center;
+	font-size: x-large;
+	margin-top: 16px;
 }
 .ApplyPop--titles_sub {
 	color: #4e4e4e;
 	font-weight: bold;
 	text-align: center;
+	font-size: larger;
 }
 .ApplyPop--button {
 	margin-top: 16px;
