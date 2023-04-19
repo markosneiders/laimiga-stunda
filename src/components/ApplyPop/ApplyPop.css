@@ -4,7 +4,7 @@
 	width: 100%;
 	z-index: 2;
 }
-.ApplyPop-background {
+.ApplyPop--background {
 	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	z-index: -1;
@@ -12,7 +12,7 @@
 	width: 100%;
 }
 
-.ApplyPop-container {
+.ApplyPop--container {
 	background-color: white;
 	border-radius: 16px;
 	position: absolute;
@@ -26,12 +26,27 @@
 	max-width: 700px;
 	padding: 16px;
 }
-h2 {
-	text-align: center;
-	color: #4e4e4e;
-}
-.ApplyPop-close {
+.ApplyPop--close {
 	position: absolute;
 	right: 16px;
 	cursor: pointer;
+}
+.ApplyPop--optionsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.ApplyPop--titles {
+}
+.ApplyPop--titles_main {
+	font-weight: bold;
+	text-align: center;
+}
+.ApplyPop--titles_sub {
+	color: #4e4e4e;
+	font-weight: bold;
+	text-align: center;
+}
+.ApplyPop--button {
+	margin-top: 16px;
 }

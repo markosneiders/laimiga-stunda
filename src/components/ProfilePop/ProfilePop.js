@@ -1,5 +1,6 @@
 import "./ProfilePop.css";
 import cardTestData from "../../cardTestData.json";
+import Button from "../Button/Button";
 
 import { GrClose } from "react-icons/gr";
 function ProfilePop({ closeFunction }) {
@@ -45,7 +46,7 @@ function ProfilePop({ closeFunction }) {
 							<br />
 							{data.test}
 							<div className="ProfilePop-card__button">
-								Atcelt
+								<Button text={"Atcelt"} />
 							</div>
 						</div>
 					))}
