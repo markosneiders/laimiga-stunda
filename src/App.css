@@ -12,13 +12,13 @@
 }
 .card-view::-webkit-scrollbar {
 	width: 0em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-/* 
-.card-view::-webkit-scrollbar-track {
-	box-shadow: "inset 0 0 6px #000";
+.card-view-top {
+	margin-bottom: 26px;
+	margin-top: 50px;
+	text-align: center;
+	font-size: larger;
 }
-
-.card-view::-webkit-scrollbar-thumb {
-	background-color: #ccc;
-	border-radius: 20px;
-} */

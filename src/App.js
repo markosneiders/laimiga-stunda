@@ -9,6 +9,7 @@ import Card from "./components/Card/Card";
 import HelpPop from "./components/HelpPop/HelpPop";
 import ProfilePop from "./components/ProfilePop/ProfilePop";
 import ApplyPop from "./components/ApplyPop/ApplyPop";
+import ConfirmPop from "./components/ConfirmPop/ConfirmPop";
 //Card data format example
 // const testData = {
 // 	date: "13/04/2023", // Date in dd/mm/yyyy string
@@ -25,7 +26,7 @@ function App() {
 	const [showHelp, setShowHelp] = useState(false);
 	const [showProfile, setShowProfile] = useState(false);
 	const [showApply, setShowApply] = useState([false, ""]);
-
+	const [showConfirm, setShowConfirm] = useState([false, ""]);
 	function handleHelp(state) {
 		setShowHelp(state);
 	}
@@ -36,9 +37,14 @@ function App() {
 		setShowApply(state);
 		console.log(state);
 	}
+	function handleConfirm(state) {
+		setShowConfirm(state);
+	}
 	function handleSendApply(data) {
+		handleConfirm([true, data]);
 		console.log(data);
 	}
+
 	return (
 		<div className="Main">
 			{!isMobile ? (
@@ -63,11 +69,17 @@ function App() {
 					applyFunction={handleSendApply}
 				/>
 			)}
+			{showConfirm[0] && (
+				<ConfirmPop
+					closeFunction={handleConfirm}
+					data={showConfirm[1]}
+				/>
+			)}
 			<div
 				className="card-view"
 				style={isMobile ? { width: "90%" } : { width: "40%" }}
 			>
-				<div style={{ marginBottom: "76px" }} />
+				<div className="card-view-top">Nākamās laimīgās stundas</div>
 				{testData.map((data, index) => (
 					<Card data={data} key={index} clickFunction={handleApply} />
 				))}

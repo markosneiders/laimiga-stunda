@@ -12,6 +12,7 @@ function ApplyPop({ closeFunction, date, applyFunction }) {
 		test: "",
 		status: "",
 		st: [false, false],
+		date: date,
 	});
 	const [warning, setWarning] = useState(false);
 	function handleClose() {
