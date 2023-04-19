@@ -36,6 +36,9 @@ function App() {
 		setShowApply(state);
 		console.log(state);
 	}
+	function handleSendApply(data) {
+		console.log(data);
+	}
 	return (
 		<div className="Main">
 			{!isMobile ? (
@@ -54,7 +57,11 @@ function App() {
 			{showHelp && <HelpPop closeFunction={handleHelp} />}
 			{showProfile && <ProfilePop closeFunction={handleProfile} />}
 			{showApply[0] && (
-				<ApplyPop date={showApply[1]} closeFunction={handleApply} />
+				<ApplyPop
+					date={showApply[1]}
+					closeFunction={handleApply}
+					applyFunction={handleSendApply}
+				/>
 			)}
 			<div
 				className="card-view"

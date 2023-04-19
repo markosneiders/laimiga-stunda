@@ -36,8 +36,6 @@
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.ApplyPop--titles {
-}
 .ApplyPop--titles_main {
 	font-weight: bold;
 	text-align: center;
@@ -49,4 +47,8 @@
 }
 .ApplyPop--button {
 	margin-top: 16px;
+}
+.ApplyPop--warning {
+	color: red;
+	text-align: center;
 }

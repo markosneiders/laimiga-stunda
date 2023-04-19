@@ -8,6 +8,11 @@ const InputField = ({ label, value, onChange, multipleChoice, options }) => {
 		setInputValue(newValue);
 		onChange(newValue);
 	};
+	const handleCheckChange = (data) => {
+		const newValue = data;
+		setInputValue(newValue);
+		onChange(newValue);
+	};
 
 	return (
 		<div className="Container">
@@ -24,14 +29,18 @@ const InputField = ({ label, value, onChange, multipleChoice, options }) => {
 				<div className="Input--Check">
 					{options.map((data, index) => (
 						<div style={{ margin: "4px" }}>
-							<input type="checkbox" />
+							<input
+								type="checkbox"
+								checked={value ? value[index] : false}
+								onChange={() => handleCheckChange(index)}
+							/>
 							<label>{data}</label>
 						</div>
 					))}
 				</div>
 			) : null}
 			{options && !multipleChoice ? (
-				<select className="Input--Drop">
+				<select className="Input--Drop" onChange={handleInputChange}>
 					{options.map((data, index) => (
 						<option value={data}>{data}</option>
 					))}
