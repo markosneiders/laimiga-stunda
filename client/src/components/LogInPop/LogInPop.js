@@ -1,28 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./LogInPop.css";
 import { GrClose } from "react-icons/gr";
-import Axios from "axios";
 import Button from "../Button/Button";
 import { TextField } from "@mui/material";
 
-function LogInPop({ closeFunction }) {
-	const [pass, setPass] = useState("");
-	const [logInStatus, setLogInStatus] = useState(false);
+function LogInPop({ closeFunction, logInFunction, logInStatus }) {
+	const [pass, setPass] = useState();
 
 	function handleClose() {
 		closeFunction(false);
-	}
-
-	function logIn() {
-		Axios.post("http://localhost:3001/login", {
-			pass: pass,
-		}).then((response) => {
-			if (response.data.message) {
-				setLogInStatus(false);
-			} else {
-				setLogInStatus(true);
-			}
-		});
 	}
 
 	return (
@@ -42,11 +28,14 @@ function LogInPop({ closeFunction }) {
 					variant="standard"
 				/>
 				<div style={{ height: "20px" }}></div>
-				<Button clickFunction={logIn} text={"Pieslēgties"} />
+				<Button
+					clickFunction={() => logInFunction(pass)}
+					text={"Pieslēgties"}
+				/>
 				{logInStatus == false ? (
-					<p style={{ color: "red" }}>{logInStatus}</p>
+					<p style={{ color: "red" }}>Netika atrasts lietotājs</p>
 				) : (
-					<p>{logInStatus}</p>
+					<p></p>
 				)}
 			</div>
 		</div>

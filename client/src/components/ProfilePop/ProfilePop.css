@@ -70,3 +70,7 @@ h2 {
 .ProfilePop-card__button {
 	margin-top: 16px;
 }
+
+.ProfilePop-container > h2 {
+	margin-bottom: 20;
+}

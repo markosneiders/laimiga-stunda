@@ -28,6 +28,7 @@
 h2 {
 	text-align: center;
 	color: #4e4e4e;
+	margin-bottom: 0;
 }
 .LogInPop-close {
 	position: absolute;
@@ -69,8 +70,4 @@ h2 {
 }
 .LogInPop-card__button {
 	margin-top: 16px;
-}
-
-.LogInPop-container > p {
-	font-size: 16px;
 }

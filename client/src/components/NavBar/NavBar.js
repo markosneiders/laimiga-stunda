@@ -3,7 +3,7 @@ import "./NavBar.css"; // import your custom CSS file
 import { BsPersonCircle, BsQuestionCircle } from "react-icons/bs"; // import the help icon
 import Button from "../Button/Button";
 
-function NavBar({ helpFunction, profileFunction }) {
+function NavBar({ helpFunction, profileFunction, navBarName }) {
 	const isMobile = window.innerWidth <= 768;
 
 	function handleHelp() {
@@ -44,7 +44,7 @@ function NavBar({ helpFunction, profileFunction }) {
 					/>
 				) : (
 					<Button
-						text={"Pieslēgties"}
+						text={navBarName}
 						content={
 							<BsPersonCircle
 								style={{

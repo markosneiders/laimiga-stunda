@@ -3,7 +3,6 @@ import "./ApplyPop.css";
 import { GrClose } from "react-icons/gr";
 
 import InputField from "../InputField/InputField";
-import teachers from "../../teachers.json";
 import Button from "../Button/Button";
 function ApplyPop({ closeFunction, date, applyFunction }) {
 	const [formData, setFormData] = useState({
@@ -73,7 +72,7 @@ function ApplyPop({ closeFunction, date, applyFunction }) {
 					<div style={{ marginRight: "32px", marginLeft: "32px" }}>
 						<InputField
 							label={"Skolotājs:"}
-							options={teachers}
+							options={["", "Sergejs Zembkovskis"]}
 							value={formData.teacher}
 							onChange={(e) =>
 								handleTextInputChange("teacher", e)
@@ -81,7 +80,7 @@ function ApplyPop({ closeFunction, date, applyFunction }) {
 						/>
 						<InputField
 							label={"Priekšmets:"}
-							options={teachers}
+							options={["", "Programmēšana"]}
 							value={formData.subject}
 							onChange={(e) =>
 								handleTextInputChange("subject", e)

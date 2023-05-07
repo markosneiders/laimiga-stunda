@@ -1,0 +1,56 @@
+[
+	{
+		"date": "13/04/2023",
+		"location": "Pie jums ir pieteicies 1 skolēns",
+		"teacher": "Elīna Ozola",
+		"st1": 40,
+		"st2": 40,
+		"st1Max": 40,
+		"st2Max": 40
+	},
+	{
+		"date": "14/04/2023",
+		"location": "Pie jums ir pieteikušies 0 skolēni",
+		"teacher": "Jānis Bērziņš",
+		"st1": 15,
+		"st2": 18,
+		"st1Max": 20,
+		"st2Max": 20
+	},
+	{
+		"date": "15/04/2023",
+		"location": "Pie jums ir pieteikušies 0 skolēni",
+		"teacher": "Līga Berziņa",
+		"st1": 30,
+		"st2": 30,
+		"st1Max": 30,
+		"st2Max": 30
+	},
+	{
+		"date": "16/04/2023",
+		"location": "Pie jums ir pieteikušies 0 skolēni",
+		"teacher": "Andris Zariņš",
+		"st1": 22,
+		"st2": 25,
+		"st1Max": 25,
+		"st2Max": 25
+	},
+	{
+		"date": "17/04/2023",
+		"location": "Pie jums ir pieteikušies 0 skolēni",
+		"teacher": "Māris Liepiņš",
+		"st1": 10,
+		"st2": 15,
+		"st1Max": 15,
+		"st2Max": 15
+	},
+	{
+		"date": "18/04/2023",
+		"location": "Pie jums ir pieteikušies 0 skolēni",
+		"teacher": "Dagnija Ozola",
+		"st1": 10,
+		"st2": 15,
+		"st1Max": 40,
+		"st2Max": 40
+	}
+]
